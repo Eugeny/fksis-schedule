@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Android Support Package v4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/HoloEverywhere/contrib/ActionBarSherlock/library/libs/android-support-v4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

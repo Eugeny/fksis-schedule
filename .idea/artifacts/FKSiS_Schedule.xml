@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="apk" build-on-make="true" name="FKSiS-Schedule">
+    <output-path>$PROJECT_DIR$/out/artifacts/FKSiS_Schedule</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="includeSystemProGuardCfgFile" value="true" />
+        <option name="keyStoreUrl" value="file://" />
+        <option name="proGuardCfgFileUrl" value="file://$PROJECT_DIR$/FKSiS-Schedule/proguard-project.txt" />
+        <option name="signingMode" value="DEBUG" />
+      </options>
+    </properties>
+    <root id="archive" name="FKSiS-Schedule.apk">
+      <element id="android-final-package" facet="FKSiS-Schedule/android/Android" />
+    </root>
+  </artifact>
+</component>
