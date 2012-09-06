@@ -594,7 +594,7 @@ public class AlertDialog extends android.app.AlertDialog {
 	private void init(boolean useNative) {
 		this.useNative = useNative;
 		if (!useNative) {
-			getWindow().setBackgroundDrawableResource(R.drawable.transparent);
+			getWindow().setBackgroundDrawableResource(android.R.color.white);
 			getWindow().setGravity(Gravity.CENTER);
 			getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT,
 					ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -785,6 +785,7 @@ public class AlertDialog extends android.app.AlertDialog {
 					viewSpacingRight, viewSpacingBottom);
 		} else {
 			LinearLayout layout = new LinearLayout(getContext());
+            layout.setBackgroundResource(android.R.color.white);
 			layout.setOrientation(LinearLayout.VERTICAL);
 			layout.addView(view);
 			try {

@@ -26,6 +26,7 @@
         <item name="dialogAlpha">0.986</item>
         <item name="dialogDimAmount">0.4</item>
         <item name="dialogDismissWhenOutside">true</item>
+        <item name="android:background">@drawable/dialog_full_holo_dark</item>
     </style>
     <style name="Holo.AlertDialog.Light">
         <item name="android:fullDark">@drawable/dialog_full_holo_light</item>
@@ -37,6 +38,7 @@
         <item name="android:bottomBright">@drawable/dialog_bottom_holo_light</item>
         <item name="android:bottomMedium">@drawable/dialog_bottom_holo_light</item>
         <item name="android:centerMedium">@drawable/dialog_middle_holo_light</item>
+        <item name="android:background">@drawable/dialog_full_holo_light</item>
     </style>
     <style name="Holo.Button" parent="@android:style/Widget.Button">
         <item name="android:background">@drawable/btn_default_holo_dark</item>

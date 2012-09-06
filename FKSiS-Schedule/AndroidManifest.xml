@@ -5,7 +5,7 @@
           android:versionName="1.0">
 
     <uses-sdk android:minSdkVersion="4"
-              android:targetSdkVersion="11"/>
+              android:targetSdkVersion="16"/>
 
     <supports-screens android:xlargeScreens="true"
                       android:largeScreens="true"
@@ -26,6 +26,8 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".LoginActivity" />
 
         <meta-data
                 android:name="ORMY_DATABASE"

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FKSiS-Schedule</string>
+    <string name="username">Login</string>
+    <string name="password">Password</string>
+    <string name="access_key">Access key</string>
+    <string name="scan_code">Scan Code</string>
+    <string name="log_in">Log in</string>
 </resources>
