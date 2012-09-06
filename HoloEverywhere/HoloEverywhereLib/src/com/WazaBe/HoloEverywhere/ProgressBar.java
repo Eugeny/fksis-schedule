@@ -300,7 +300,7 @@ public class ProgressBar extends View {
 				LayerDrawable layers = (LayerDrawable) d;
 				com.WazaBe.HoloEverywhere.RotateDrawable r = new com.WazaBe.HoloEverywhere.RotateDrawable();
 				r.setState(
-						((RotateDrawable) layers.getDrawable(1)).getDrawable(),
+						((com.WazaBe.HoloEverywhere.RotateDrawable) layers.getDrawable(1)).getDrawable(),
 						true, true, 0.5f, 0.5f, 720f, 0f);
 				layers.setDrawableByLayerId(R.id.secondaryProgress, r);
 			}

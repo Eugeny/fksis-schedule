@@ -4,25 +4,15 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
-    <TextView
-            android:layout_width="fill_parent"
+    <com.viewpagerindicator.TitlePageIndicator
+            android:id="@+id/indicator"
             android:layout_height="wrap_content"
-            android:text="Hello World, MainActivity"
+            android:layout_width="fill_parent"/>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             />
-    <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="New EditText"
-            android:id="@+id/editText"/>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button"/>
-    <RadioButton
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="New RadioButton"
-            android:id="@+id/radioButton"/>
 </LinearLayout>
 

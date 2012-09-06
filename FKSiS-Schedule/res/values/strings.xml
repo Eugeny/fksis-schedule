@@ -6,4 +6,11 @@
     <string name="access_key">Access key</string>
     <string name="scan_code">Scan Code</string>
     <string name="log_in">Log in</string>
+    <string name="preferences">Preferences</string>
+    <string name="refresh">Refresh</string>
+    <string name="synchronization_complete">Synchronization complete</string>
+    <string name="synchronization_failed">Synchronization failed</string>
+    <string name="schedule">Schedule</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="weekdays">Monday Tuesday Wednesday Thursday Friday Saturday</string>
 </resources>

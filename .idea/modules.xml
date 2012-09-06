@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/FKSiS-Schedule/FKSiS-Schedule.iml" filepath="$PROJECT_DIR$/FKSiS-Schedule/FKSiS-Schedule.iml" />
       <module fileurl="file://$PROJECT_DIR$/HoloEverywhere/HoloEverywhereLib/HoloEverywhereLib.iml" filepath="$PROJECT_DIR$/HoloEverywhere/HoloEverywhereLib/HoloEverywhereLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/HoloEverywhere/contrib/KFramework-SW/KFramework-SW.iml" filepath="$PROJECT_DIR$/HoloEverywhere/contrib/KFramework-SW/KFramework-SW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" filepath="$PROJECT_DIR$/ViewPagerIndicator/ViewPagerIndicator.iml" />
     </modules>
   </component>
 </project>
