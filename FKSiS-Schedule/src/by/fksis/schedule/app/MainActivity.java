@@ -15,7 +15,6 @@ import com.danikula.aibolit.annotation.InjectView;
 import com.viewpagerindicator.TitlePageIndicator;
 
 public class MainActivity extends SFragmentActivity {
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,6 @@ public class MainActivity extends SFragmentActivity {
         Aibolit.doInjections(this);
 
         getSupportActionBar().setTitle(R.string.schedule);
-
         API.loadCredentials(this);
 
         if (!API.credentialsPresent()) {
@@ -63,7 +61,7 @@ public class MainActivity extends SFragmentActivity {
             menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-                    // Show Preferences...
+                    startActivity(new Intent(MainActivity.this, PreferenceActivity.class));
                     return true;
                 }
             });
