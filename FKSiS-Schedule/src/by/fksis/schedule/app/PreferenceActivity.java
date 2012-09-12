@@ -16,7 +16,7 @@ public class PreferenceActivity extends SPreferenceActivity {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
         {
-            Preference preference = findPreference(getResources().getString(R.string.log_out_preference));
+            Preference preference = findPreference(getString(R.string.log_out_preference));
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -25,19 +25,18 @@ public class PreferenceActivity extends SPreferenceActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
-                    return false;
+                    return true;
                 }
             });
         }
         {
-            ListPreference preference = (ListPreference) findPreference(getResources().
-                    getString(R.string.subgroup_preference));
-            String[] subGroups = getResources().getStringArray(R.array.subgroups);
+            ListPreference preference = (ListPreference) findPreference(getString(R.string.subgroup_preference));
+            String[] subGroups = getStringArray(R.array.subgroups);
             int valueIndex = 0;
-            preference.setSummary(subGroups[valueIndex]);
+            preference.setSummary(subGroups[valueIndex + 1]);
             preference.setEntries(subGroups);
             preference.setEntryValues(subGroups);
-            preference.setValueIndex(valueIndex);
+            preference.setValueIndex(valueIndex + 1);
             preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
