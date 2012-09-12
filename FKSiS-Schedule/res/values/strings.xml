@@ -19,7 +19,7 @@
 
     <string name="reload_preference">reload</string>
     <string name="reload_title">Automatic reload</string>
-    <string name="reload_summary">Update schedule with entrance</string>
+    <string name="reload_summary">Update schedule on start</string>
 
     <string name="log_out_preference">log_out</string>
     <string name="log_out_title">Log Out</string>
@@ -30,12 +30,12 @@
 
     <string name="subgroup_preference">subgroup</string>
     <string name="subgroup_title">Subgroup</string>
-    <string name="subgroup_summary">Select your subgroup</string>
 
     <string-array name="subgroups">
-        <item>1, 2</item>
-        <item>1-st</item>
-        <item>2-nd</item>
+        <item>Not set</item>
+	<item>Both</item>
+        <item>First</item>
+        <item>Second</item>
     </string-array>
 
 

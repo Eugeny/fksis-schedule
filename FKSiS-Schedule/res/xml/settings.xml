@@ -16,7 +16,6 @@
             <ListPreference
                     holo:key="@string/subgroup_preference"
                     holo:title="@string/subgroup_title"
-                    holo:summary="@string/subgroup_summary"
                     />
 
             <Preference
