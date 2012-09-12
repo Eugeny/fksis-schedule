@@ -11,7 +11,7 @@
     <string name="synchronization_complete">Synchronization complete</string>
     <string name="synchronization_failed">Synchronization failed</string>
     <string name="schedule">Schedule</string>
-    <string name="please_wait">Please wait...</string>
+    <string name="please_wait">Please wait&#8230;</string>
     <string name="weekdays">Monday Tuesday Wednesday Thursday Friday Saturday</string>
 
     <string name="settings_category">User Settings</string>
@@ -19,10 +19,10 @@
 
     <string name="reload_preference">reload</string>
     <string name="reload_title">Automatic reload</string>
-    <string name="reload_summary">Update schedule with entrance</string>
+    <string name="reload_summary">Update schedule on launch</string>
 
     <string name="log_out_preference">log_out</string>
-    <string name="log_out_title">Log Out</string>
+    <string name="log_out_title">Log out</string>
 
     <string name="date_switcher_preference">date_switcher</string>
     <string name="date_switcher_title">Date Switcher</string>
@@ -30,13 +30,17 @@
 
     <string name="subgroup_preference">subgroup</string>
     <string name="subgroup_title">Subgroup</string>
-    <string name="subgroup_summary">Select your subgroup</string>
 
     <string-array name="subgroups">
-        <item>1, 2</item>
-        <item>1-st</item>
-        <item>2-nd</item>
+        <item>Both</item>
+        <item>First</item>
+        <item>Second</item>
     </string-array>
 
+    <string-array name="subgroupValues">
+        <item>1,2</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 </resources>

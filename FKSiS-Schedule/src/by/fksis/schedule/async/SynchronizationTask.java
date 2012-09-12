@@ -11,6 +11,9 @@ import com.ormy.Application;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SynchronizationTask extends SafeProgressTask {
     public SynchronizationTask(Context context, boolean foreground) {
         super(context);
@@ -29,17 +32,20 @@ public class SynchronizationTask extends SafeProgressTask {
         // TODO: Save user data!
         L.d(userData.toString());
 
-        JSONArray classes = API.queryClasses();
+        JSONArray jsonClasses = API.queryClasses();
+        ScheduleClass[] classes = new ScheduleClass[jsonClasses.length()];
+        int length = jsonClasses.length();
+        for (int i = 0; i < length; i++)
+            classes[i] = new ScheduleClass(context, jsonClasses.getJSONObject(i));
+
         // Delete old data
         ScheduleClass.get(ScheduleClass.class).delete();
         Application.getDatabase().sql.beginTransaction();
-        int length = classes.length();
         for (int i = 0; i < length; i++) {
-            new ScheduleClass(context, classes.getJSONObject(i)).save();
+            classes[i].save();
             if (i % 30 == 0) {
                 setProgress(1.0 * i / length);
                 publishProgress((String[]) null);
-                L.d(i);
             }
         }
         Application.getDatabase().sql.setTransactionSuccessful();

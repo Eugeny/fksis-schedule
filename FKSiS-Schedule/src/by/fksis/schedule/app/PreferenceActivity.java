@@ -6,7 +6,6 @@ import by.fksis.schedule.API;
 import by.fksis.schedule.R;
 import com.WazaBe.HoloEverywhere.preference.ListPreference;
 import com.WazaBe.HoloEverywhere.preference.Preference;
-import com.WazaBe.HoloEverywhere.preference.PreferenceManager;
 import com.WazaBe.HoloEverywhere.sherlock.SPreferenceActivity;
 
 public class PreferenceActivity extends SPreferenceActivity {
@@ -14,9 +13,10 @@ public class PreferenceActivity extends SPreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.settings);
+        addPreferencesFromResource(R.xml.preferences);
+
         {
-            Preference preference = findPreference(getResources().getString(R.string.log_out_preference));
+            Preference preference = findPreference(getString(R.string.log_out_preference));
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -29,15 +29,9 @@ public class PreferenceActivity extends SPreferenceActivity {
                 }
             });
         }
+
         {
-            ListPreference preference = (ListPreference) findPreference(getResources().
-                    getString(R.string.subgroup_preference));
-            String[] subGroups = getResources().getStringArray(R.array.subgroups);
-            int valueIndex = 0;
-            preference.setSummary(subGroups[valueIndex]);
-            preference.setEntries(subGroups);
-            preference.setEntryValues(subGroups);
-            preference.setValueIndex(valueIndex);
+            ListPreference preference = (ListPreference) findPreference(getString(R.string.subgroup_preference));
             preference.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
                 @Override
                 public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -46,5 +40,7 @@ public class PreferenceActivity extends SPreferenceActivity {
                 }
             });
         }
+
+
     }
 }

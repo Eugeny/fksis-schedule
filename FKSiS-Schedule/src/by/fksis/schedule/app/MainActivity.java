@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import by.fksis.schedule.API;
+import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.adapters.WeekPagerAdapter;
 import by.fksis.schedule.async.SynchronizationTask;
@@ -37,7 +38,8 @@ public class MainActivity extends SFragmentActivity {
         indicator.setSelectedColor(0xff444444);
         indicator.setSelectedBold(false);
 
-        new SynchronizationTask(this, false).execute();
+        if (new Preferences(this).getAutoReload())
+            new SynchronizationTask(this, false).execute();
     }
 
     @Override

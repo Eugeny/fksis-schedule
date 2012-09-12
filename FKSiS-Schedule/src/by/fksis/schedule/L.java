@@ -2,7 +2,7 @@ package by.fksis.schedule;
 
 import android.util.Log;
 
-public class L {
+public final class L {
     public static String tag = "L";
 
     public static String getLocation(int d) {

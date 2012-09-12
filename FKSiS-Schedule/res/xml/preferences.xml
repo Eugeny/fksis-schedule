@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:holo="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+            holo:title="@string/settings_category"
+            >
+
+        <CheckBoxPreference
+                holo:key="@string/reload_preference"
+                holo:title="@string/reload_title"
+                holo:summary="@string/reload_summary"
+                holo:defaultValue="true"
+                />
+
+        <ListPreference
+                holo:key="@string/subgroup_preference"
+                holo:title="@string/subgroup_title"
+                holo:entries="@array/subgroups"
+                holo:entryValues="@array/subgroupValues"
+                holo:defaultValue="1,2"
+                />
+
+        <Preference
+                holo:key="@string/date_switcher_preference"
+                holo:title="@string/date_switcher_title"
+                holo:summary="@string/date_switcher_summary"
+                />
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+            holo:title="@string/other_category"
+            >
+
+        <Preference
+                holo:key="@string/log_out_preference"
+                holo:title="@string/log_out_title"
+                />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
