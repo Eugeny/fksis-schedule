@@ -28,7 +28,7 @@
     <string name="date_switcher_title">Date Switcher</string>
     <string name="date_switcher_summary">There will be preference soon...</string>
 
-    <string name="subgroup_preference">subgroup</string>
+    <string name="subgroup_preference">sub_group</string>
     <string name="subgroup_title">Subgroup</string>
 
     <string-array name="subgroups">
@@ -38,7 +38,7 @@
     </string-array>
 
     <string-array name="subgroupValues">
-        <item>1,2</item>
+        <item>0</item>
         <item>1</item>
         <item>2</item>
     </string-array>

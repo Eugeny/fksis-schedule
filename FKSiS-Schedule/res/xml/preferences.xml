@@ -18,7 +18,7 @@
                 holo:title="@string/subgroup_title"
                 holo:entries="@array/subgroups"
                 holo:entryValues="@array/subgroupValues"
-                holo:defaultValue="1,2"
+                holo:defaultValue="0"
                 />
 
         <Preference

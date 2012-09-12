@@ -5,20 +5,19 @@ import com.WazaBe.HoloEverywhere.preference.PreferenceManager;
 import com.WazaBe.HoloEverywhere.preference.SharedPreferences;
 
 public final class Preferences {
-    private static final String PREFERENCE_AUTO_RELOAD = "auto_reload";
-    private static final String PREFERENCE_SUBGROUP = "subgroup";
-
     private SharedPreferences preferences;
+    private Context context;
 
     public Preferences(Context context) {
+        this.context = context;
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     public boolean getAutoReload() {
-        return preferences.getBoolean(PREFERENCE_AUTO_RELOAD, true);
+        return preferences.getBoolean(context.getString(R.string.reload_preference), true);
     }
 
-    public String getSubgroup() {
-        return preferences.getString(PREFERENCE_SUBGROUP, "1,2");
+    public int getSubgroup() {
+        return Integer.parseInt(preferences.getString(context.getString(R.string.subgroup_preference), "0"));
     }
 }
