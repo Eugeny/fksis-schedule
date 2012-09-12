@@ -25,7 +25,7 @@ public class PreferenceActivity extends SPreferenceActivity {
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                     finish();
-                    return false;
+                    return true;
                 }
             });
         }
