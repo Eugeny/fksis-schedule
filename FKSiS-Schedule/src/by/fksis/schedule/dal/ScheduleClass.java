@@ -1,8 +1,9 @@
-package by.fksis.schedule.models;
+package by.fksis.schedule.dal;
 
 import android.content.Context;
 import com.ormy.Model;
 import com.ormy.annotations.Column;
+import com.ormy.annotations.SortBy;
 import com.ormy.annotations.Table;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,6 +26,7 @@ public class ScheduleClass extends Model<ScheduleClass> {
     public int day;
 
     @Column
+    @SortBy
     public int timeSlot;
 
     @Column
@@ -39,6 +41,9 @@ public class ScheduleClass extends Model<ScheduleClass> {
     @Column
     public String teacher;
 
+    public ScheduleClass(Context ctx) {
+        super(ctx);
+    }
 
     public ScheduleClass(Context ctx, JSONObject json) {
         super(ctx);

@@ -19,7 +19,7 @@ public class MainActivity extends SFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
         Aibolit.doInjections(this);
 
         getSupportActionBar().setTitle(R.string.schedule);
@@ -37,6 +37,8 @@ public class MainActivity extends SFragmentActivity {
         indicator.setTextSize(20);
         indicator.setSelectedColor(0xff444444);
         indicator.setSelectedBold(false);
+
+        viewPager.setCurrentItem(WeekPagerAdapter.NOW_PAGE);
 
         if (new Preferences(this).getAutoReload())
             new SynchronizationTask(this, false).execute();
