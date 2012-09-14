@@ -11,32 +11,70 @@
     <string name="synchronization_complete">Synchronization complete</string>
     <string name="synchronization_failed">Synchronization failed</string>
     <string name="schedule">Schedule</string>
-    <string name="please_wait">Please wait...</string>
-    <string name="weekdays">Monday Tuesday Wednesday Thursday Friday Saturday</string>
+    <string name="please_wait">Please wait&#8230;</string>
+
+    <string-array name="weekdays">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
 
     <string name="settings_category">User Settings</string>
     <string name="other_category">Other</string>
 
     <string name="reload_preference">reload</string>
     <string name="reload_title">Automatic reload</string>
-    <string name="reload_summary">Update schedule on start</string>
+    <string name="reload_summary">Update schedule on launch</string>
 
     <string name="log_out_preference">log_out</string>
-    <string name="log_out_title">Log Out</string>
+    <string name="log_out_title">Log out</string>
 
     <string name="date_switcher_preference">date_switcher</string>
     <string name="date_switcher_title">Date Switcher</string>
     <string name="date_switcher_summary">There will be preference soon...</string>
 
-    <string name="subgroup_preference">subgroup</string>
+    <string name="group_preference">group</string>
+
+    <string name="subgroup_preference">sub_group</string>
     <string name="subgroup_title">Subgroup</string>
 
     <string-array name="subgroups">
+<<<<<<< HEAD
 	<item>Not set</item>
+=======
+>>>>>>> upstream/master
         <item>Both</item>
         <item>First</item>
         <item>Second</item>
     </string-array>
 
+    <string-array name="subgroupValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
+    <string-array name="timeSlotStart">
+        <item>8:00</item>
+        <item>9:45</item>
+        <item>11:40</item>
+        <item>13:25</item>
+        <item>15:20</item>
+        <item>17:05</item>
+        <item>18:45</item>
+    </string-array>
+
+    <string-array name="timeSlotEnd">
+        <item>9:35</item>
+        <item>11:20</item>
+        <item>13:15</item>
+        <item>15:00</item>
+        <item>16:55</item>
+        <item>18:40</item>
+        <item>20:20</item>
+    </string-array>
 </resources>

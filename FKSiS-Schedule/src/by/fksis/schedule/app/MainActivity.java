@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import by.fksis.schedule.API;
+import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.adapters.WeekPagerAdapter;
 import by.fksis.schedule.async.SynchronizationTask;
@@ -18,7 +19,7 @@ public class MainActivity extends SFragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
         Aibolit.doInjections(this);
 
         getSupportActionBar().setTitle(R.string.schedule);
@@ -37,7 +38,10 @@ public class MainActivity extends SFragmentActivity {
         indicator.setSelectedColor(0xff444444);
         indicator.setSelectedBold(false);
 
-        new SynchronizationTask(this, false).execute();
+        viewPager.setCurrentItem(WeekPagerAdapter.NOW_PAGE);
+
+        if (new Preferences(this).getAutoReload())
+            new SynchronizationTask(this, false).execute();
     }
 
     @Override

@@ -224,7 +224,7 @@ class ActivityChooserModel extends DataSetObservable {
     private static final Object sRegistryLock = new Object();
 
     /**
-     * This the registry for data models.
+     * This the registry for data dal.
      */
     private static final Map<String, ActivityChooserModel> sDataModelRegistry =
         new HashMap<String, ActivityChooserModel>();

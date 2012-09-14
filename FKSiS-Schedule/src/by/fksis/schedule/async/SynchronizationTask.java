@@ -3,9 +3,11 @@ package by.fksis.schedule.async;
 import android.content.Context;
 import by.fksis.schedule.API;
 import by.fksis.schedule.L;
+import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.async.base.SafeProgressTask;
-import by.fksis.schedule.models.ScheduleClass;
+import by.fksis.schedule.dal.Database;
+import by.fksis.schedule.dal.ScheduleClass;
 import com.WazaBe.HoloEverywhere.Toast;
 import com.ormy.Application;
 import org.json.JSONArray;
@@ -26,24 +28,27 @@ public class SynchronizationTask extends SafeProgressTask {
     @Override
     public void process() throws Exception {
         JSONObject userData = API.queryUserData();
-        // TODO: Save user data!
+        new Preferences(context).setGroup(userData.getJSONObject("student").getString("groupNumber"));
         L.d(userData.toString());
 
-        JSONArray classes = API.queryClasses();
+        JSONArray jsonClasses = API.queryClasses();
+        int length = jsonClasses.length();
+
         // Delete old data
+        Database.autoRefresh = false;
         ScheduleClass.get(ScheduleClass.class).delete();
         Application.getDatabase().sql.beginTransaction();
-        int length = classes.length();
         for (int i = 0; i < length; i++) {
-            new ScheduleClass(context, classes.getJSONObject(i)).save();
+            new ScheduleClass(context, jsonClasses.getJSONObject(i)).save();
             if (i % 30 == 0) {
                 setProgress(1.0 * i / length);
                 publishProgress((String[]) null);
-                L.d(i);
             }
         }
         Application.getDatabase().sql.setTransactionSuccessful();
         Application.getDatabase().sql.endTransaction();
+        Database.autoRefresh = true;
+        Application.getDatabase().notifyUpdated(null);
     }
 
     @Override
