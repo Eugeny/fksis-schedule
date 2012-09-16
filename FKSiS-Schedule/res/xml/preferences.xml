@@ -14,6 +14,11 @@
                 />
 
         <ListPreference
+                holo:key="@string/group_preference"
+                holo:title="@string/group_title"
+                />
+
+        <ListPreference
                 holo:key="@string/subgroup_preference"
                 holo:title="@string/subgroup_title"
                 holo:entries="@array/subgroups"
