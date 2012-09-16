@@ -28,7 +28,9 @@ public class SynchronizationTask extends SafeProgressTask {
     @Override
     public void process() throws Exception {
         JSONObject userData = API.queryUserData();
-        new Preferences(context).setGroup(userData.getJSONObject("student").getString("groupNumber"));
+        Preferences preferences = new Preferences(context);
+        if (preferences.getGroup().equals("000000"))
+            preferences.setGroup(userData.getJSONObject("student").getString("groupNumber"));
         L.d(userData.toString());
 
         JSONArray jsonClasses = API.queryClasses();
