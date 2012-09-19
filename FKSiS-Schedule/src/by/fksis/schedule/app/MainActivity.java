@@ -23,6 +23,8 @@ public class MainActivity extends SFragmentActivity {
         Aibolit.doInjections(this);
 
         getSupportActionBar().setTitle(R.string.schedule);
+        getSupportActionBar().setIcon(R.drawable.logo);
+
         API.loadCredentials(this);
 
         if (!API.credentialsPresent()) {

@@ -23,6 +23,9 @@ public class PreferenceActivity extends SPreferenceActivity implements SharedPre
         addPreferencesFromResource(R.xml.preferences);
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
+        getSupportActionBar().setTitle(R.string.preferences);
+        getSupportActionBar().setIcon(R.drawable.logo);
+
         {
             Preference preference = findPreference(getString(R.string.log_out_preference));
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
