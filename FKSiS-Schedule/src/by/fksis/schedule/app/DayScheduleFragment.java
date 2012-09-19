@@ -10,6 +10,7 @@ import android.widget.TextView;
 import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.Util;
+import by.fksis.schedule.dal.Broadcast;
 import by.fksis.schedule.dal.Database;
 import by.fksis.schedule.dal.ScheduleClass;
 import com.danikula.aibolit.Aibolit;
@@ -53,7 +54,23 @@ public class DayScheduleFragment extends Fragment implements DatabaseObserver {
     }
 
     public void refresh() {
+        broadcastContainer.removeAllViews();
+
+        List<Broadcast> broadcasts = Broadcast.get(Broadcast.class)
+                .filter("groupList%", "%" + new Preferences(getActivity()).getGroup() + "%")
+                .list();
+
+        for (Broadcast broadcast : broadcasts)
+            if (!broadcast.isExpired()) {
+                View broadcastView = LayoutInflater.from(getActivity()).inflate(R.layout.day_broadcast_line, broadcastContainer, false);
+                TextView text = (TextView) broadcastView;
+                text.setText(broadcast.text);
+                broadcastContainer.addView(broadcastView);
+            }
+
+
         container.removeAllViews();
+
         List<ScheduleClass> classes = ScheduleClass.get(ScheduleClass.class)
                 .filter("weeks%", "%" + weekNumber + "%")
                 .filter("day", dayOfWeek)
@@ -83,6 +100,9 @@ public class DayScheduleFragment extends Fragment implements DatabaseObserver {
 
     @InjectView(R.id.container)
     private LinearLayout container;
+
+    @InjectView(R.id.broadcast_container)
+    private LinearLayout broadcastContainer;
 
     @Override
     public void databaseObjectUpdated(Model<?> model) {

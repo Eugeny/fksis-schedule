@@ -3,6 +3,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:id="@+id/container">
+              android:layout_height="fill_parent">
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:id="@+id/broadcast_container"/>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:id="@+id/container"/>
+
 </LinearLayout>

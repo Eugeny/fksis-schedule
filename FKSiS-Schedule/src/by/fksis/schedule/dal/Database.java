@@ -1,5 +1,7 @@
 package by.fksis.schedule.dal;
 
+import com.ormy.Application;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,5 +15,17 @@ public final class Database {
             result.add(clazz.studentGroup);
         Collections.sort(result);
         return result;
+    }
+
+    public static void endTransaction() {
+        Application.getDatabase().sql.setTransactionSuccessful();
+        Application.getDatabase().sql.endTransaction();
+        autoRefresh = true;
+        Application.getDatabase().notifyUpdated(null);
+    }
+
+    public static void beginTransaction() {
+        autoRefresh = false;
+        Application.getDatabase().sql.beginTransaction();
     }
 }

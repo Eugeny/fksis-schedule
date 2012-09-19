@@ -72,4 +72,10 @@ public final class API {
         params.put("classes", "1");
         return new JSONArray(query(params));
     }
+
+    public static JSONArray queryBroadcasts() throws IOException, JSONException {
+        HashMap<String, String> params = new HashMap();
+        params.put("broadcasts", "1");
+        return new JSONArray(query(params));
+    }
 }

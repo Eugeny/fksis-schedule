@@ -38,7 +38,7 @@
                 android:value="db"/>
         <meta-data
                 android:name="ORMY_VERSION"
-                android:value="3"/>
+                android:value="5"/>
     </application>
 
 </manifest>

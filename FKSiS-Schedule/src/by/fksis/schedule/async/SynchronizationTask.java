@@ -6,10 +6,10 @@ import by.fksis.schedule.L;
 import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.async.base.SafeProgressTask;
+import by.fksis.schedule.dal.Broadcast;
 import by.fksis.schedule.dal.Database;
 import by.fksis.schedule.dal.ScheduleClass;
 import com.WazaBe.HoloEverywhere.Toast;
-import com.ormy.Application;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,26 +31,32 @@ public class SynchronizationTask extends SafeProgressTask {
         Preferences preferences = new Preferences(context);
         if (preferences.getGroup().equals("000000"))
             preferences.setGroup(userData.getJSONObject("student").getString("groupNumber"));
-        L.d(userData.toString());
+
+        JSONArray jsonBroadcasts = API.queryBroadcasts();
+        int bLength = jsonBroadcasts.length();
+        Database.beginTransaction();
+        Broadcast.get(Broadcast.class).delete();
+        for (int i = 0; i < bLength; i++) {
+            new Broadcast(context, jsonBroadcasts.getJSONObject(i)).save();
+            setProgress(1.0 * i / bLength);
+            publishProgress((String[]) null);
+        }
+        Database.endTransaction();
 
         JSONArray jsonClasses = API.queryClasses();
-        int length = jsonClasses.length();
+        int cLength = jsonClasses.length();
 
         // Delete old data
-        Database.autoRefresh = false;
+        Database.beginTransaction();
         ScheduleClass.get(ScheduleClass.class).delete();
-        Application.getDatabase().sql.beginTransaction();
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < cLength; i++) {
             new ScheduleClass(context, jsonClasses.getJSONObject(i)).save();
             if (i % 30 == 0) {
-                setProgress(1.0 * i / length);
+                setProgress(1.0 * i / cLength);
                 publishProgress((String[]) null);
             }
         }
-        Application.getDatabase().sql.setTransactionSuccessful();
-        Application.getDatabase().sql.endTransaction();
-        Database.autoRefresh = true;
-        Application.getDatabase().notifyUpdated(null);
+        Database.endTransaction();
     }
 
     @Override
