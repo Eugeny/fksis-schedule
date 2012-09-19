@@ -43,6 +43,7 @@
 
     <string name="subgroup_preference">sub_group</string>
     <string name="subgroup_title">Subgroup</string>
+    <string name="no_classes">No classes</string>
 
     <string-array name="subgroups">
         <item>Both</item>

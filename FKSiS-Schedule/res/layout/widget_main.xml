@@ -1,47 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_gravity="center"
-    android:layout_margin="5dp"
-    android:background="@drawable/gradient_radial_black"
-    android:orientation="horizontal" >
+              android:id="@+id/widget"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_gravity="center"
+              android:background="@drawable/appwidget_bg_holo"
+              android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="5dp"
-        android:src="@drawable/ic_launcher" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_launcher"/>
 
-    <ImageView
-        android:layout_width="3px"
-        android:layout_height="fill_parent"
-        android:layout_margin="5dp"
-        android:background="@drawable/gradient_linear_separator" />
+    <LinearLayout android:orientation="vertical"
+                  android:layout_gravity="center_vertical"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/widget_curent"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="Current lesson"
-        android:textColor="#FFF" />
+        <TextView
+                android:id="@+id/widget_current"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Current lesson"
+                android:textColor="#ddd"
+                android:textSize="22dp"/>
 
-    <ImageView
-        android:layout_width="3px"
-        android:layout_height="fill_parent"
-        android:layout_margin="5dp"
-        android:background="@drawable/gradient_linear_separator" />
-
-    <TextView
-        android:id="@+id/widget_next"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="Next lesson"
-        android:textColor="#FFF" />
-
+        <TextView
+                android:id="@+id/widget_next"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Next lesson"
+                android:textColor="#fff"
+                android:textSize="14dp"/>
+    </LinearLayout>
 </LinearLayout>
