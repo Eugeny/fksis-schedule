@@ -2,7 +2,6 @@ package by.fksis.schedule.async;
 
 import android.content.Context;
 import by.fksis.schedule.API;
-import by.fksis.schedule.L;
 import by.fksis.schedule.Preferences;
 import by.fksis.schedule.R;
 import by.fksis.schedule.async.base.SafeProgressTask;
@@ -31,7 +30,8 @@ public class SynchronizationTask extends SafeProgressTask {
         Preferences preferences = new Preferences(context);
         if (preferences.getGroup().equals("000000"))
             preferences.setGroup(userData.getJSONObject("student").getString("groupNumber"));
-
+        if (preferences.getUserRole().equals("none"))
+            preferences.setUserRole(userData.getJSONObject("student").getJSONObject("user").getString("userRole"));
         JSONArray jsonBroadcasts = API.queryBroadcasts();
         int bLength = jsonBroadcasts.length();
         Database.beginTransaction();

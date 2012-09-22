@@ -12,6 +12,9 @@
     <string name="synchronization_failed">Synchronization failed</string>
     <string name="schedule">Schedule</string>
     <string name="please_wait">Please wait&#8230;</string>
+    <string name="group_message">Message for group</string>
+    <string name="post_end_date">Select day</string>
+    <string name="post">Post</string>
 
     <string-array name="weekdays">
         <item>Monday</item>
@@ -23,6 +26,8 @@
         <item>Sunday</item>
     </string-array>
 
+    <string name="role_preference">user_role</string>
+
     <string name="settings_category">User Settings</string>
     <string name="other_category">Other</string>
 
@@ -32,10 +37,6 @@
 
     <string name="log_out_preference">log_out</string>
     <string name="log_out_title">Log out</string>
-
-    <string name="date_switcher_preference">date_switcher</string>
-    <string name="date_switcher_title">Date Switcher</string>
-    <string name="date_switcher_summary">There will be preference soon...</string>
 
     <string name="group_preference">group</string>
     <string name="group_title">Group</string>
@@ -75,5 +76,12 @@
         <item>16:55</item>
         <item>18:40</item>
         <item>20:20</item>
+    </string-array>
+
+    <string-array name="specialRoles">
+        <item>EX_DEAN</item>
+        <item>DEAN</item>
+        <item>SECRETARY</item>
+        <item>GROUP_MONITOR</item>
     </string-array>
 </resources>

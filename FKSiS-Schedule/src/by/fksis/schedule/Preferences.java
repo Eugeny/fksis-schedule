@@ -35,4 +35,12 @@ public final class Preferences {
     public void setGroup(String value) {
         preferences.edit().putString(context.getString(R.string.group_preference), value).commit();
     }
+
+    public String getUserRole() {
+        return preferences.getString(context.getString(R.string.role_preference), "none");
+    }
+
+    public void setUserRole(String value) {
+        preferences.edit().putString(context.getString(R.string.role_preference), value).commit();
+    }
 }

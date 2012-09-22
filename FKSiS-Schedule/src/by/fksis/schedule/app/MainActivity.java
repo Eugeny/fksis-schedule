@@ -49,6 +49,26 @@ public class MainActivity extends SFragmentActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         {
+            String[] specialRoles = getResources().getStringArray(R.array.specialRoles);
+            String userRole = new Preferences(this).getUserRole();
+            for (String role : specialRoles) {
+                if (role.equals(userRole)) {
+                    MenuItem menuItem = menu.add(R.string.group_message);
+                    menuItem.setIcon(R.drawable.ic_message);
+                    menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+                    menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            startActivity(new Intent(MainActivity.this, MessageActivity.class));
+                            return true;
+                        }
+                    });
+                    break;
+                }
+            }
+        }
+
+        {
             MenuItem menuItem = menu.add(R.string.refresh);
             menuItem.setIcon(R.drawable.ic_reload);
             menuItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
@@ -60,6 +80,7 @@ public class MainActivity extends SFragmentActivity {
                 }
             });
         }
+
         {
             MenuItem menuItem = menu.add(R.string.preferences);
             menuItem.setIcon(R.drawable.ic_settings);

@@ -31,6 +31,8 @@
 
         <activity android:name=".app.LoginActivity"/>
 
+        <activity android:name=".app.MessageActivity"/>
+
         <activity android:name=".app.PreferenceActivity"/>
 
         <meta-data
