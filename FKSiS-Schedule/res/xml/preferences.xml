@@ -26,12 +26,6 @@
                 holo:defaultValue="0"
                 />
 
-        <Preference
-                holo:key="@string/date_switcher_preference"
-                holo:title="@string/date_switcher_title"
-                holo:summary="@string/date_switcher_summary"
-                />
-
     </PreferenceCategory>
 
 
