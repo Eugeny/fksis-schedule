@@ -186,9 +186,9 @@ public class MainActivity extends SFragmentActivity {
     @InjectView(R.id.pager)
     private ViewPager viewPager;
 
-    @InjectView(R.id.currentClass)
+    @InjectView(R.id.current_class)
     private TextView currentClass;
 
-    @InjectView(R.id.nextClass)
+    @InjectView(R.id.next_class)
     private TextView nextClass;
 }
