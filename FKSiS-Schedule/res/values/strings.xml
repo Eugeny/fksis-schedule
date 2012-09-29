@@ -10,6 +10,8 @@
     <string name="refresh">Refresh</string>
     <string name="synchronization_complete">Synchronization complete</string>
     <string name="synchronization_failed">Synchronization failed</string>
+    <string name="connection_error">Connection Error</string>
+    <string name="invalid_message">Empty message or incorrect date</string>
     <string name="schedule">Schedule</string>
     <string name="please_wait">Please wait&#8230;</string>
     <string name="group_message">Message for group</string>
