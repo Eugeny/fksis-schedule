@@ -21,11 +21,11 @@ public class WeekPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == NOW_PAGE)
-            return "TODAY";
+            return context.getString(R.string.today);
         if (position == NOW_PAGE + 1)
-            return "TOMORROW";
+            return context.getString(R.string.tomorrow);
         if (position == NOW_PAGE - 1)
-            return "YESTERDAY";
+            return context.getString(R.string.yesterday);
         if (Math.abs(position - NOW_PAGE) < 4)
             return context.getResources().getStringArray(R.array.weekdays)[Util.getDayOfWeekIndex(dates[position])].toUpperCase();
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Расписание</string>
+    <string name="username">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="access_key">Ключ доступа</string>
+    <string name="scan_code">Сканировать QR</string>
+    <string name="log_in">Войти</string>
+    <string name="preferences">Настройки</string>
+    <string name="refresh">Обновить</string>
+    <string name="synchronization_complete">Успешное обновление</string>
+    <string name="synchronization_failed">Ошибка при обновлении</string>
+    <string name="connection_error">Нет соединения</string>
+    <string name="invalid_message">Пустое сообщение или неверная дата</string>
+    <string name="schedule">Расписание</string>
+    <string name="please_wait">Пожалуйста, подождите&#8230;</string>
+    <string name="group_message">Оповещение группе</string>
+    <string name="post_end_date">Дата истечения</string>
+    <string name="post">Отправить</string>
+
+    <string-array name="weekdays">
+        <item>Понедельник</item>
+        <item>Вторник</item>
+        <item>Среда</item>
+        <item>Четверг</item>
+        <item>Пятница</item>
+        <item>Суббота</item>
+        <item>Воскресенье</item>
+    </string-array>
+
+    <string name="settings_category">Пользователь</string>
+    <string name="other_category">Прочее</string>
+
+    <string name="reload_title">Автообновление</string>
+    <string name="reload_summary">Обновлять при старте</string>
+
+    <string name="log_out_title">Выйти из аккаунта</string>
+
+    <string name="group_title">Группа</string>
+    <string name="group_not_selected">Не выбрана</string>
+
+    <string name="subgroup_title">Подгруппа</string>
+    <string name="no_classes">Нет занятий</string>
+    <string name="today">СЕГОДНЯ</string>
+    <string name="tomorrow">ЗАВТРА</string>
+    <string name="yesterday">ВЧЕРА</string>
+
+    <string-array name="subgroups">
+        <item>Обе</item>
+        <item>Первая</item>
+        <item>Вторая</item>
+    </string-array>
+</resources>
