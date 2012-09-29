@@ -3,6 +3,7 @@
               android:id="@+id/widget"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:layout_margin="10dp"
               android:layout_gravity="center"
               android:background="@drawable/appwidget_bg_holo"
               android:orientation="horizontal">
