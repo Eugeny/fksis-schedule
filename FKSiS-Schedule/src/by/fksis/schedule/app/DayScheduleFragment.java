@@ -82,7 +82,6 @@ public class DayScheduleFragment extends Fragment implements DatabaseObserver {
                 .filter("studentGroup", new Preferences(getActivity()).getGroup())
                 .filter("subgroups%", "%" + new Preferences(getActivity()).getSubgroupString() + "%")
                 .list();
-        boolean found = false;
         for (ScheduleClass clazz : classes) {
             View lineView = LayoutInflater.from(getActivity()).inflate(R.layout.day_schedule_line, container, false);
             LineViewHolder holder = new LineViewHolder();

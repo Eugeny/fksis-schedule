@@ -71,6 +71,8 @@
         <item>15:20</item>
         <item>17:05</item>
         <item>18:45</item>
+        <item>18:45</item>
+        <item>20:25</item>
     </string-array>
 
     <string-array name="timeSlotEnd">
@@ -81,6 +83,7 @@
         <item>16:55</item>
         <item>18:40</item>
         <item>20:20</item>
+        <item>22:00</item>
     </string-array>
 
     <string-array name="specialRoles">
