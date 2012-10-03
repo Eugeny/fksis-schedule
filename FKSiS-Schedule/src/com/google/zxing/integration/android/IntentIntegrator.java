@@ -17,7 +17,6 @@
 package com.google.zxing.integration.android;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,6 +25,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import com.WazaBe.HoloEverywhere.AlertDialog;
 
 import java.util.*;
 
@@ -222,7 +222,7 @@ public class IntentIntegrator {
     /**
      * Initiates a scan for all known barcode types.
      */
-    public AlertDialog initiateScan() {
+    public android.app.AlertDialog initiateScan() {
         return initiateScan(ALL_CODE_TYPES);
     }
 
@@ -234,7 +234,7 @@ public class IntentIntegrator {
      * @return the {@link AlertDialog} that was shown to the user prompting them to download the app
      *         if a prompt was needed, or null otherwise
      */
-    public AlertDialog initiateScan(Collection<String> desiredBarcodeFormats) {
+    public android.app.AlertDialog initiateScan(Collection<String> desiredBarcodeFormats) {
         Intent intentScan = new Intent(BS_PACKAGE + ".SCAN");
         intentScan.addCategory(Intent.CATEGORY_DEFAULT);
 
@@ -291,7 +291,7 @@ public class IntentIntegrator {
         return null;
     }
 
-    private AlertDialog showDownloadDialog() {
+    private android.app.AlertDialog showDownloadDialog() {
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(activity);
         downloadDialog.setTitle(title);
         downloadDialog.setMessage(message);
@@ -351,7 +351,7 @@ public class IntentIntegrator {
      *
      * @see #shareText(CharSequence, CharSequence)
      */
-    public AlertDialog shareText(CharSequence text) {
+    public android.app.AlertDialog shareText(CharSequence text) {
         return shareText(text, "TEXT_TYPE");
     }
 
@@ -364,7 +364,7 @@ public class IntentIntegrator {
      * @return the {@link AlertDialog} that was shown to the user prompting them to download the app
      *         if a prompt was needed, or null otherwise
      */
-    public AlertDialog shareText(CharSequence text, CharSequence type) {
+    public android.app.AlertDialog shareText(CharSequence text, CharSequence type) {
         Intent intent = new Intent();
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         intent.setAction(BS_PACKAGE + ".ENCODE");

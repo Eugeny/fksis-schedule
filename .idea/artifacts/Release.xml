@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="apk" name="Release">
+    <output-path>$PROJECT_DIR$/out/artifacts/Release</output-path>
+    <properties id="android-properties">
+      <options>
+        <option name="includeSystemProGuardCfgFile" value="true" />
+        <option name="keyAlias" value="Google Play" />
+        <option name="keyPassword" value="MjUwMTE5OTM=" />
+        <option name="keyStorePassword" value="MjUwMTE5OTM=" />
+        <option name="keyStoreUrl" value="file://$USER_HOME$/Dropbox/sync/keys/android/keystore" />
+        <option name="proGuardCfgFileUrl" value="file://$PROJECT_DIR$/FKSiS-Schedule/proguard-project.txt" />
+        <option name="signingMode" value="RELEASE_SIGNED" />
+      </options>
+    </properties>
+    <root id="archive" name="FKSiS-Schedule.apk">
+      <element id="android-final-package" facet="FKSiS-Schedule/android/Android" />
+    </root>
+  </artifact>
+</component>
