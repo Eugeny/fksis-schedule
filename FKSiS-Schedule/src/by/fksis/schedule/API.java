@@ -79,13 +79,13 @@ public final class API {
         return new JSONArray(query(params));
     }
 
-    public static void queryAddBroadcasts(String text, String date) throws IOException, JSONException {
+    public static void queryAddBroadcast(String text, long date) throws IOException, JSONException {
         HashMap<String, String> params = new HashMap();
         params.put("addBroadcast", "1");
         params.put("auth_login", username);
         params.put("auth_key", accessKey);
         params.put("text", text);
-        params.put("expires", date);
+        params.put("expires", Long.toString(date));
         query(params);
     }
 }

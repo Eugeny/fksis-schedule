@@ -50,6 +50,7 @@
     <string name="today">TODAY</string>
     <string name="tomorrow">TOMORROW</string>
     <string name="yesterday">YESTERDAY</string>
+    <string name="subgroup_text">subgroup</string>
 
     <string-array name="subgroups">
         <item>Both</item>

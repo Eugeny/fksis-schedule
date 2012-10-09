@@ -86,6 +86,9 @@ public class DayScheduleFragment extends Fragment implements DatabaseObserver {
             Aibolit.doInjections(holder, lineView);
 
             holder.name.setText(clazz.name);
+            String subgroupText = "";
+            if (clazz.subgroups.length() != 2)
+                subgroupText = ", " + getActivity().getString(R.string.subgroup_text) + " " + clazz.subgroups;
             holder.teacher.setText(Util.defaultValue(clazz.type, "") + " " + Util.defaultValue(clazz.teacher, ""));
             holder.time.setText(getResources().getStringArray(R.array.timeSlotStart)[clazz.timeSlot]);
             holder.time2.setText(getResources().getStringArray(R.array.timeSlotEnd)[clazz.timeSlot]);

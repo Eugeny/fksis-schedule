@@ -44,6 +44,7 @@
     <string name="today">СЕГОДНЯ</string>
     <string name="tomorrow">ЗАВТРА</string>
     <string name="yesterday">ВЧЕРА</string>
+    <string name="subgroup_text">subgroup</string>
 
     <string-array name="subgroups">
         <item>Обе</item>

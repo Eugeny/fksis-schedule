@@ -52,7 +52,7 @@ public class MainActivity extends SFragmentActivity {
         indicator.setViewPager(viewPager);
         indicator.setFooterIndicatorStyle(TitlePageIndicator.IndicatorStyle.Underline);
         indicator.setTextColor(0xff888888);
-        indicator.setTextSize(20);
+        //indicator.setTextSize(20);
         indicator.setSelectedColor(0xff444444);
         indicator.setSelectedBold(false);
 
@@ -66,6 +66,7 @@ public class MainActivity extends SFragmentActivity {
         handler.sendEmptyMessage(0);
 
     }
+
     private Handler handler = new Handler() {
         @Override
         public void dispatchMessage(Message msg) {
@@ -86,11 +87,11 @@ public class MainActivity extends SFragmentActivity {
 
             boolean found = false;
             for (ScheduleClass clazz : classes) {
-                Date dateStart = null ,dateEnd = null;
+                Date dateStart = null, dateEnd = null;
                 try {
                     dateStart = sdf_all.parse(sdf_date.format(Calendar.getInstance().getTime()) + " " + getResources().getStringArray(R.array.timeSlotStart)[clazz.timeSlot]);
                     dateEnd = sdf_all.parse(sdf_date.format(Calendar.getInstance().getTime()) + " " + getResources().getStringArray(R.array.timeSlotEnd)[clazz.timeSlot]);
-                } catch (Exception e){
+                } catch (Exception e) {
                     Log.e(DayScheduleFragment.class.getSimpleName(), e.getMessage());
                 }
                 if ((dateStart.getTime() <= Calendar.getInstance().getTime().getTime())
@@ -98,9 +99,9 @@ public class MainActivity extends SFragmentActivity {
                     currentClass.setText(clazz.name + " " + clazz.room + "\n" +
                             Util.defaultValue(clazz.type, "") + " " + Util.defaultValue(clazz.teacher, ""));
                     time.setTime(dateEnd);
-                    if ((classes.size() - 1)  > classes.lastIndexOf(clazz))  {
+                    if ((classes.size() - 1) > classes.lastIndexOf(clazz)) {
                         ScheduleClass l_next = classes.get(classes.lastIndexOf(clazz) + 1);
-                        nextClass.setText( l_next.name + " " + l_next.room  + "\n" +
+                        nextClass.setText(l_next.name + " " + l_next.room + "\n" +
                                 Util.defaultValue(l_next.type, "") + " " + Util.defaultValue(l_next.teacher, ""));
                     } else {
                         nextClass.setText(getString(R.string.no_classes));
@@ -115,8 +116,8 @@ public class MainActivity extends SFragmentActivity {
                     Date dateStart = null, dateEnd;
                     try {
                         dateStart = sdf_all.parse(sdf_date.format(Calendar.getInstance().getTime()) + " " + getResources().getStringArray(R.array.timeSlotStart)[l.timeSlot]);
-                    } catch (Exception e){
-                        Log.e(DayScheduleFragment.class.getSimpleName(),e.getMessage());
+                    } catch (Exception e) {
+                        Log.e(DayScheduleFragment.class.getSimpleName(), e.getMessage());
                     }
                     if (dateStart.getTime() > Calendar.getInstance().getTime().getTime()) {
                         found = true;
@@ -126,7 +127,7 @@ public class MainActivity extends SFragmentActivity {
                     }
                 }
             }
-            handler.sendMessageAtTime(new Message(),time.getTimeInMillis());
+            handler.sendMessageAtTime(new Message(), time.getTimeInMillis());
         }
     };
 
@@ -143,7 +144,7 @@ public class MainActivity extends SFragmentActivity {
                     menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                         @Override
                         public boolean onMenuItemClick(MenuItem item) {
-                            startActivity(new Intent(MainActivity.this, MessageActivity.class));
+                            startActivity(new Intent(MainActivity.this, BroadcastSubmissionActivity.class));
                             return true;
                         }
                     });

@@ -11,7 +11,6 @@ import com.WazaBe.HoloEverywhere.preference.Preference;
 import com.WazaBe.HoloEverywhere.preference.SharedPreferences;
 import com.WazaBe.HoloEverywhere.sherlock.SPreferenceActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SuppressWarnings("deprecation")
