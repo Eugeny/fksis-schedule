@@ -37,6 +37,14 @@ public final class API {
                 .commit();
         loadCredentials(context);
     }
+    public static void clearCredentials(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        sharedPreferences.edit()
+                .remove("username")
+                .remove("accessKey")
+                .commit();
+        loadCredentials(context);
+    }
 
     public static String getUsername() {
         return username;

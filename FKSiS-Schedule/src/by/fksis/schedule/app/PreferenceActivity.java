@@ -30,9 +30,9 @@ public class PreferenceActivity extends SPreferenceActivity implements SharedPre
             preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
-                    API.updateCredentials(PreferenceActivity.this, null, null);
+                    API.clearCredentials(PreferenceActivity.this);
                     Intent intent = new Intent(PreferenceActivity.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
                     return true;
