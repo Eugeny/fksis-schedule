@@ -101,7 +101,7 @@ public class MainActivity extends SFragmentActivity {
                     time.setTime(dateEnd);
                     if ((classes.size() - 1) > classes.lastIndexOf(clazz)) {
                         ScheduleClass l_next = classes.get(classes.lastIndexOf(clazz) + 1);
-                        nextClass.setText(l_next.name + " " + l_next.room + "\n" +
+                        nextClass.setText(l_next.name + " " + Util.defaultValue(l_next.room, "") + "\n" +
                                 Util.defaultValue(l_next.type, "") + " " + Util.defaultValue(l_next.teacher, ""));
                     } else {
                         nextClass.setText(getString(R.string.no_classes));
@@ -122,7 +122,7 @@ public class MainActivity extends SFragmentActivity {
                     if (dateStart.getTime() > Calendar.getInstance().getTime().getTime()) {
                         found = true;
                         currentClass.setText(getString(R.string.no_classes));
-                        nextClass.setText(l.name + " " + l.room + "\n" + Util.defaultValue(l.type, "") + " " + Util.defaultValue(l.teacher, ""));
+                        nextClass.setText(l.name + " " + Util.defaultValue(l.room, "") + "\n" + Util.defaultValue(l.type, "") + " " + Util.defaultValue(l.teacher, ""));
                         time.setTime(dateStart);
                     }
                 }
@@ -179,6 +179,12 @@ public class MainActivity extends SFragmentActivity {
             });
         }
         return true;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 
     @InjectView(R.id.indicator)

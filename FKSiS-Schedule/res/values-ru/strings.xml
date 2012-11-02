@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Расписание</string>
-    <string name="username">Логин</string>
+    <string name="username">E-mail</string>
     <string name="password">Пароль</string>
     <string name="access_key">Ключ доступа</string>
     <string name="scan_code">Сканировать QR</string>

@@ -44,7 +44,7 @@ public final class Util {
         return 0;
     }
 
-    public static Object defaultValue(Object obj, Object def) {
+    public static <T> T defaultValue(T obj, T def) {
         return (obj == null) ? def : obj;
     }
 }
