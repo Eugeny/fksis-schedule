@@ -96,7 +96,7 @@ public class Widget extends AppWidgetProvider {
                             time.setTime(dateEnd);
                             if (i.hasNext()) {
                                 ScheduleClass l_next = i.next();
-                                remoteViews.setTextViewText(R.id.widget_next, l_next.name + l_next.room);
+                                remoteViews.setTextViewText(R.id.widget_next, l_next.name + Util.defaultValue (l.room, ""));
                             } else {
                                 remoteViews.setTextViewText(R.id.widget_next, context.getString(R.string.no_classes));
                             }
@@ -113,7 +113,7 @@ public class Widget extends AppWidgetProvider {
                             if (dateStart.getTime() > Calendar.getInstance().getTime().getTime()) {
                                 found = true;
                                 remoteViews.setTextViewText(R.id.widget_current, context.getString(R.string.no_classes));
-                                remoteViews.setTextViewText(R.id.widget_next, l.name + " " + ((l.room != null) ? l.room : ""));
+                                remoteViews.setTextViewText(R.id.widget_next, l.name + " " + Util.defaultValue (l.room, ""));
                                 time.setTime(dateStart);
                             }
                         }
