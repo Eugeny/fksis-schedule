@@ -30,7 +30,7 @@ public class WeekPagerAdapter extends FragmentPagerAdapter {
             return context.getResources().getStringArray(R.array.weekdays)[Util.getDayOfWeekIndex(dates[position])].toUpperCase();
 
         int day = dates[position].get(Calendar.DAY_OF_MONTH);
-        int month = dates[position].get(Calendar.MONTH);
+        int month = dates[position].get(Calendar.MONTH) + 1;
         return day + "." + (month < 9 ? "0" : "") + month;
     }
 
