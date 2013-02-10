@@ -2,6 +2,7 @@ package by.fksis.schedule;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 @SuppressWarnings("deprecation")
 public final class Util {
@@ -11,17 +12,23 @@ public final class Util {
     }
 
     public static int getLastEnteringYear() {
-        int year = new Date().getYear();
+        int year = new GregorianCalendar().get(GregorianCalendar.YEAR);
         if (new Date().getMonth() < 8)
             year--;
         return year;
     }
 
     public static int getScheduleWeek(Date date) {
-        int y = getLastEnteringYear();
-        Date sep1 = new Date(y, 8, 1);
-        long wsd = sep1.getTime() / 86400000 - sep1.getDay();
-        return (int) Math.round(Math.floor((date.getTime() / 86400000 - wsd) / 7) % 4) + 1;
+        Calendar sep1 = new GregorianCalendar(getLastEnteringYear(), GregorianCalendar.SEPTEMBER, 1);
+        if (sep1.get(GregorianCalendar.DAY_OF_WEEK) == GregorianCalendar.SUNDAY) {
+            sep1.add(GregorianCalendar.DAY_OF_YEAR, -7);
+        }
+        sep1.add(GregorianCalendar.DAY_OF_YEAR, -sep1.get(GregorianCalendar.DAY_OF_WEEK) + GregorianCalendar.MONDAY);
+        Calendar now = new GregorianCalendar();
+        now.setTime(date);
+
+        int dWeeks = (int) Math.floor((now.getTime().getTime() - sep1.getTime().getTime()) / 86400000 / 7);
+        return dWeeks % 4 + 1;
     }
 
     public static int getDayOfWeekIndex(Calendar date) {
